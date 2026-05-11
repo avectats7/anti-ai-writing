@@ -1,0 +1,56 @@
+# Anti-AI Writing
+
+> A Claude skill that edits any piece of writing to remove AI tells. Banned words, banned phrases, banned structures (em dashes, the default rule of three, bulleted bold titles, formulaic transitions). Returns a clean rewrite plus a diagnosis of what was wrong. Works in English and Spanish.
+
+## What this repo is
+
+A single skill, `anti-ai-writing`, packaged for two Claude environments:
+
+- **Claude Code**: install as a plugin from this repo's marketplace.
+- **Claude Cowork**: download the bundled `.skill` file from `dist/`.
+
+The skill is a stylistic editor. It accepts a draft and returns a rewritten version with AI tells removed, plus a diagnosis explaining what changed and why.
+
+## Primary skill files
+
+- [skills/anti-ai-writing/SKILL.md](skills/anti-ai-writing/SKILL.md): entry point. Five-step workflow (read, scan, rewrite, reread aloud, output with diagnosis).
+- [skills/anti-ai-writing/references/banned-list.md](skills/anti-ai-writing/references/banned-list.md): full Era 1 / Era 2 / Era 3 banned word list. Banned phrases. Banned structural patterns. Weak verb constructions. Spanish AI tells.
+- [skills/anti-ai-writing/references/rewrites.md](skills/anti-ai-writing/references/rewrites.md): how to fix each kind of violation. Word substitutions. Phrase rewrites. Em dash rewrites. Rule-of-three rewrites. Bulleted-bold-title fixes.
+- [skills/anti-ai-writing/references/examples.md](skills/anti-ai-writing/references/examples.md): 30 before-and-after pairs across tweets, emails, LinkedIn, blog intros, marketing copy, About pages, internal comms, and Spanish examples.
+
+## Install commands
+
+Claude Code:
+```
+/plugin marketplace add avectats7/anti-ai-writing
+/plugin install anti-ai-writing
+```
+
+Claude Cowork: download `dist/anti-ai-writing.skill` and open it in Cowork.
+
+## When the skill triggers
+
+The skill fires on edit requests where the goal is to remove AI fingerprints. Triggers: "make this sound less like AI," "remove the AI tells," "edit this so it doesn't sound like ChatGPT," "humanise this," "proofread for AI," "this reads like an LLM," "make this less corporate," "rewrite without AI words."
+
+## Output format
+
+Every output has four blocks: Diagnosis (what was found), Rewrite (the fix), Changes (3-6 biggest edits with rationale), Notes (anything debatable).
+
+## License
+
+MIT. Free to use, modify, and ship commercially.
+
+## Sister skill
+
+[copy-that-sells](https://github.com/avectats7/copy-that-sells) generates copy. This skill polishes copy. They pair.
+
+## Maintainer
+
+Tato Polanco. https://github.com/avectats7
+
+## Optional
+
+- [README.md](README.md): full project description for human readers.
+- [CHANGELOG.md](CHANGELOG.md): version history.
+- [CONTRIBUTING.md](CONTRIBUTING.md): how to contribute new banned items or examples.
+- [docs/install.md](docs/install.md): detailed install guide.

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "anti-ai-writing",
+  "owner": {
+    "name": "Tato Polanco",
+    "url": "https://github.com/avectats7"
+  },
+  "plugins": [
+    {
+      "name": "anti-ai-writing",
+      "description": "Edit any piece of writing to remove AI tells. Strips banned words, banned phrases, and banned structures. Returns a clean rewrite plus a diagnosis. Works in English and Spanish.",
+      "source": "."
+    }
+  ]
+}

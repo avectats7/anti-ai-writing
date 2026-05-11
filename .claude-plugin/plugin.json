@@ -1,0 +1,31 @@
+{
+  "name": "anti-ai-writing",
+  "description": "Edit any piece of writing to remove AI tells. Strips banned words, banned phrases, and banned structures (em dashes, the default rule of three, bullet lists with bold titles, formulaic transitions). Returns a clean rewrite plus a diagnosis of what was wrong. Works in English and Spanish. Pairs well with copy-that-sells.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Tato Polanco",
+    "url": "https://github.com/avectats7"
+  },
+  "homepage": "https://github.com/avectats7/anti-ai-writing",
+  "repository": "https://github.com/avectats7/anti-ai-writing",
+  "license": "MIT",
+  "keywords": [
+    "anti-ai",
+    "ai-detection",
+    "ai-writing",
+    "humanize-text",
+    "ai-editor",
+    "proofreading",
+    "claude",
+    "claude-code",
+    "claude-skill",
+    "claude-plugin",
+    "writing",
+    "editor",
+    "remove-ai-tells",
+    "sound-human",
+    "chatgpt-detector",
+    "marketing",
+    "copywriting"
+  ]
+}
