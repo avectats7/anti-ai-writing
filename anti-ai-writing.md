@@ -39,7 +39,7 @@ These became famous as ChatGPT fingerprints. Avoid all of them.
 The model evolved. These took over. Still banned.
 
 - Align with / Aligning with
-- Bolstered *(repeat, doubly banned)*
+- Bolstered *(repeat)*
 - Crucial *(repeat)*
 - Emphasizing *(repeat)*
 - Enhance / Enhanced / Enhancing
