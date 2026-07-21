@@ -1,6 +1,6 @@
 {
   "name": "anti-ai-writing",
-  "description": "Edit any piece of writing to remove AI tells. Strips banned words, banned phrases, and banned structures (em dashes, the default rule of three, bullet lists with bold titles, formulaic transitions). Returns a clean rewrite plus a diagnosis of what was wrong. Works in English and Spanish. Pairs well with copy-that-sells.",
+  "description": "Edits any piece of writing to remove AI tells. Strips banned words, banned phrases, and banned structures (em dashes, the default rule of three, bullet lists with bold titles, formulaic transitions). Returns a clean rewrite plus a diagnosis of what was wrong. Works in English and Spanish. Pairs well with copy-that-sells.",
   "version": "1.0.0",
   "author": {
     "name": "Tato Polanco",
