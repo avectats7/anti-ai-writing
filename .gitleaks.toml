@@ -1,0 +1,13 @@
+# gitleaks config — extends the default ruleset (which covers AWS, GCP, Azure,
+# Stripe, GitHub tokens, SSH keys, private keys, JWTs, Slack, etc.) and adds
+# repo-specific allowlist for documentation references.
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Allow doc/example references"
+paths = [
+    '''(?i)README\.md$''',
+    '''(?i)SECURITY\.md$''',
+    '''(?i)SKILL\.md$''',
+]

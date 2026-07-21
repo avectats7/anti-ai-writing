@@ -17,9 +17,9 @@ A one-sentence reason. Why is this word or phrase a fingerprint of LLM-default w
 
 Paste at least three examples of this word or phrase appearing in obvious AI-generated content. Screenshots or URLs are best. Different models or sources strengthen the case.
 
-1. 
-2. 
-3. 
+1.
+2.
+3.
 
 ## Which era
 

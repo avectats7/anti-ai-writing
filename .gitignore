@@ -1,3 +1,28 @@
+# Secrets — defense in depth, even though this repo should never contain any
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+*.jks
+*.keystore
+id_rsa
+id_ed25519
+id_ecdsa
+id_dsa
+*.pkcs12
+credentials.json
+secrets.json
+service-account*.json
+*.kdbx
+.netrc
+
+# Editor / OS junk
 .DS_Store
 __pycache__/
 *.pyc
@@ -5,5 +30,3 @@ node_modules/
 .vscode/
 .idea/
 *.swp
-.env
-.env.local
