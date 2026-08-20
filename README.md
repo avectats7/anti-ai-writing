@@ -2,7 +2,7 @@
 
 > A Claude skill that edits any piece of writing to remove AI tells. Strips the words, phrases, and structures that mark a draft as machine-generated. Returns a clean rewrite that still sounds like the writer, only sharper.
 
-[![Version](https://img.shields.io/badge/version-2.0.0-brightgreen.svg)](CHANGELOG.md) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Claude Code](https://img.shields.io/badge/Claude-Code-orange)](https://claude.com/claude-code) [![Claude Cowork](https://img.shields.io/badge/Claude-Cowork-orange)](https://claude.com) [![Skills](https://img.shields.io/badge/skill-anti--ai-purple)](skills/anti-ai-writing/SKILL.md)
+[![Version](https://img.shields.io/badge/version-2.1.0-brightgreen.svg)](CHANGELOG.md) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Claude Code](https://img.shields.io/badge/Claude-Code-orange)](https://claude.com/claude-code) [![Claude Cowork](https://img.shields.io/badge/Claude-Cowork-orange)](https://claude.com) [![Skills](https://img.shields.io/badge/skill-anti--ai-purple)](skills/anti-ai-writing/SKILL.md)
 
 > **Available in Claude's plugin marketplace.** Install it into Claude Code in two commands — add this repo as a marketplace, then install the plugin:
 >
@@ -39,11 +39,13 @@ The skill works in any language. The English banned list is the most complete. T
 
 Version 2 came out of one paper: **StoryScope: Investigating idiosyncrasies in AI fiction** (Russell, Rajendhran, Pham, Iyyer, and Wieting, 2026).
 
-The authors asked whether you could tell human writing from AI writing *without* looking at word choice or syntax, using only discourse-level choices like character agency and chronological structure. Across 61,608 stories written to the same prompts by one human and five models, those structural features alone separated human from machine at 93.2%. Stripping the surface tells barely moved the number.
+The authors asked whether you could tell human writing from AI writing *without* looking at word choice or syntax, using only discourse-level choices like character agency and chronological structure. Across 61,608 stories written to the same prompts by one human and five models (Claude Sonnet 4.6, GPT-5.4, Gemini 3 Flash, DeepSeek V3.2, Kimi K2.5), those structural features alone separated human from machine at 93.2%. Stripping the surface tells barely moved the number.
 
 That is the whole argument for Layer 2. You can scrub every banned word and still read as a machine, because the fingerprint lives in the structure. v2 exists to catch that.
 
-Paper and code: [github.com/jenna-russell/storyscope](https://github.com/jenna-russell/storyscope)
+v2.1 goes back to the source repo and maps the skill's editing habits onto StoryScope's full 304-feature taxonomy, so the discourse layer is grounded in the measurement instrument, not only the paper's summary.
+
+Paper: [arXiv:2604.03136](https://arxiv.org/abs/2604.03136). Code and data: [github.com/jenna-russell/storyscope](https://github.com/jenna-russell/storyscope)
 
 ---
 

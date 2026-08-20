@@ -2,8 +2,8 @@
 name: anti-ai-writing
 description: Edits any piece of writing to remove AI tells. Strips banned words ("delve," "unlock," "leverage," "robust," "harness," "showcase," "navigate," "vibrant," "framework," "ecosystem," and 50+ others), banned phrases ("in today's fast-paced world," "unlock the potential of," "it is worth noting that," "in conclusion"), banned structures (em dashes, en dashes, compound-word hyphens, the default rule of three, bulleted bold-title lists, formulaic transitions like "Furthermore"), and weak verb constructions ("utilize," "facilitate," "serves as a"). Use this skill whenever the user says "make this sound human," "remove the AI tells," "edit this so it doesn't sound like ChatGPT," "humanise this," "proofread for AI," "this reads like an LLM," "make this less corporate," "rewrite without AI words," or shares any draft and wants it sharper and more human. Also strips discourse-level tells that survive a surface edit, including stated takeaways, single-track structure, manufactured closure, emotion rendered as physical sensation, atmospheric openers, vague unnamed references, front-loaded context, and the closing epilogue paragraph. Also runs a strict review mode that audits a draft against both layers and returns a verdict and finding list instead of a rewrite, triggered by "strict review," "audit this," "score this," "does this pass," "review estricto," or any request for a judgement rather than an edit. Works in English and Spanish; the banned list is language-aware.
 metadata:
-  source: "Tats anti-AI writing ruleset (Era 1 / Era 2 / Era 3 banned word + phrase + structure list, full compound-hyphen rule, weak-verb substitution table). Discourse layer adapted from Russell et al. 2026, StoryScope."
-  version: 2.0.0
+  source: "Tats anti-AI writing ruleset (Era 1 / Era 2 / Era 3 banned word + phrase + structure list, full compound-hyphen rule, weak-verb substitution table). Discourse layer adapted from Russell et al. 2026, StoryScope (arXiv:2604.03136)."
+  version: 2.1.0
 ---
 
 # Anti-AI Writing

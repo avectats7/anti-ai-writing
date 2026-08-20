@@ -2,6 +2,16 @@
 
 All notable changes to the `anti-ai-writing` skill.
 
+## [2.1.0]: 2026-08-20
+
+### Added
+- `references/discourse-tells.md`: a "ten dimensions" table mapping the full StoryScope feature space (304 features across 10 discourse dimensions) to the skill's editing habits, showing which dimensions reach short-form prose and which are fiction-only. Drawn from the repo's `taxonomy.json`, not the paper alone.
+
+### Changed
+- Sharpened habit 1 (the stated takeaway) with the over-determination finding: AI dialogue serves philosophical debate 59% of the time versus 34%. Added a rule to cut quotes that exist only to voice the moral.
+- Expanded the Claude fingerprint with three markers from the paper's per-model analysis: low event-type diversity, avoidance of dream sequences, and the preference for a quiet ending over an "avalanche" ending.
+- Citation precision: added the arXiv id (2604.03136) and the exact models studied (Claude Sonnet 4.6, GPT-5.4, Gemini 3 Flash, DeepSeek V3.2, Kimi K2.5) across the reference files, README, and SKILL.md.
+
 ## [2.0.0]: 2026-08-20
 
 ### Added

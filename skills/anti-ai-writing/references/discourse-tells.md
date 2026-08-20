@@ -28,6 +28,7 @@ Some of these rules are wrong for some registers. See "Where this layer does not
 
 ## Table of contents
 
+- The ten dimensions, and which reach short form
 - Applying by length: the triage table
 - Eight habits to cut
 - Six signals to restore, and the budget that limits them
@@ -37,6 +38,27 @@ Some of these rules are wrong for some registers. See "Where this layer does not
 - Quick scan checklist
 - Where this layer does not apply
 - Source
+
+---
+
+## The ten dimensions, and which reach short form
+
+StoryScope measured 304 features across ten discourse dimensions. The eight habits below are the editing-facing slice of that space. This table is the whole space, so you can see what was measured, which direction the model leans, and which dimensions survive the jump from a 5,000-word story to an email. Style is absent on purpose: it is Layer 1's territory, governed by `banned-list.md`.
+
+| Dimension | Which way AI leans | Reaches short form? |
+|---|---|---|
+| Plot / theme | Over-explains the theme, moralises, ties every thread to one point | Yes — habit 1, signal 5 |
+| Events | Tighter causal chains, protagonist-driven and internally-resolved endings | Yes — habits 2, 3 |
+| Agents (character) | Emotion shown through the body, not named; characters introduced by external description | Yes — habit 4, habit 5 |
+| Setting | Opens on scene; setting mirrors the character's inner state | Yes — habit 5 |
+| Situatedness | Vague allusions over named works; reverent to genre, avoids subversion | Yes — habit 6 |
+| Perspective | Uniform voice; rarely breaks the fourth wall or addresses the reader | Yes — signal 1 |
+| Temporal structure | Single-track and linear; few time jumps, front-loaded reveals | Partly — signal 2 (a delayed reveal rarely fits an email) |
+| Revelation | Less withholding, less suspense, discloses early | Rarely — needs narrative length |
+| Social networks | Simpler relational topology, fewer integrated subplots | Rarely — fiction-specific |
+| Style | (surface: word choice, syntax, rhythm) | Layer 1, not here |
+
+Six dimensions carry straight into short-form prose. Two carry partly. Two are effectively fiction-only. When a diagnosis reaches for a tell, it is almost always pulling from the top six rows.
 
 ---
 
@@ -61,11 +83,11 @@ One rule applies at every band, including under 40 words: batch convergence. It 
 
 ### 1. The stated takeaway
 
-Finding: AI narrators explain the story's theme 77% of the time, humans 52%. AI scores higher on explicitness and moralising across the board (3.94 vs 3.28 on a 1 to 5 scale).
+Finding: AI narrators explain the story's theme 77% of the time, humans 52%. AI scores higher on explicitness and moralising across the board (3.94 vs 3.28 on a 1 to 5 scale). The same reflex shows up in dialogue: AI dialogue serves philosophical debate 59% of the time versus 34%, characters arguing the theme aloud so the reader cannot miss it. The paper's word for the pattern is over-determination: the model spells the meaning out rather than trusting the reader to infer it.
 
-In short form: the last sentence tells the reader what the previous paragraphs meant. "Which is really what good onboarding is about." "It was a reminder that the small details matter." "The lesson here is to test early."
+In short form: the last sentence tells the reader what the previous paragraphs meant. "Which is really what good onboarding is about." "It was a reminder that the small details matter." "The lesson here is to test early." The dialogue version: a quote inserted only to state the lesson. "As my mentor always said, 'ship early and listen.'"
 
-Rule: delete the sentence that explains the point. End on the last concrete thing. If the point does not survive without the explanation, the concrete things are too weak, and that is the actual fix.
+Rule: delete the sentence that explains the point. End on the last concrete thing. Cut any quote that exists only to voice the moral. If the point does not survive without the explanation, the concrete things are too weak, and that is the actual fix.
 
 ### 2. The single clean track
 
@@ -189,12 +211,14 @@ Restore: do not write every piece to the same template. See "Batch convergence" 
 
 The study attributed authorship six ways at 68.4% macro-F1 using discourse features alone, and Claude was the most distinctive of the five models. Its markers:
 
-- Event intensity escalates less than in any other source. Nothing builds. Everything sits at one level.
+- Event intensity escalates less than in any other source. Nothing builds. Everything sits at one level. This is Claude's single strongest fingerprint feature.
+- Low event-type diversity. The same kinds of things keep happening. Claude's second strongest feature.
 - The most uniform narrative voice of the five. No register shifts.
 - A reverent, continuist stance toward convention: honouring the expected form rather than bending it (62% of Claude stories versus 39% to 56% across other models).
-- A preference for epilogues and quiet endings over abrupt ones.
+- A preference for epilogues and quiet endings over abrupt ones. The paper's phrase: Claude favours the quiet ending over the "avalanche" ending.
+- Avoids dream sequences and other temporal distortions. It stays literal and in-sequence.
 
-If the draft came from Claude, check those four first. In short form they read as: flat emphasis, one tone throughout, the expected structure executed cleanly, and one paragraph too many at the end.
+If the draft came from Claude, check those first. In short form they read as: flat emphasis with nothing rising above the rest, a narrow range of moves repeated, one tone throughout, the expected structure executed cleanly, and one calm paragraph too many at the end.
 
 For reference, the other fingerprints: GPT leans on social framing, gossip and rumour as mechanism, and distant retrospective framing. Gemini produces the tidiest endings, extended wrap-ups, and bleak settings. DeepSeek front-loads context. Kimi has almost no fingerprint and sits at the generic centre of the AI distribution.
 
@@ -278,6 +302,8 @@ When a draft sits in one of these registers, say so in the Notes block and apply
 
 The findings in this file come from:
 
-Jenna Russell, Rishanth Rajendhran, Chau Minh Pham, Mohit Iyyer, and John Wieting. "StoryScope: Investigating idiosyncrasies in AI fiction." Preprint, University of Maryland and Google DeepMind, 2026. Code and data: https://github.com/jenna-russell/storyscope
+Jenna Russell, Rishanth Rajendhran, Chau Minh Pham, Mohit Iyyer, and John Wieting. "StoryScope: Investigating idiosyncrasies in AI fiction." Preprint, University of Maryland and Google DeepMind, 2026. arXiv:2604.03136. Code and data: https://github.com/jenna-russell/storyscope
+
+The five models studied: Claude Sonnet 4.6, GPT-5.4, Gemini 3 Flash, DeepSeek V3.2, and Kimi K2.5, each writing to the same 10,272 prompts as one human author. The per-model fingerprints above are specific to these versions and will drift as the models change.
 
 They measured the difference. This file only translates it into edits. Any error in the translation is this skill's, not theirs.
