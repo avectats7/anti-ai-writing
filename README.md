@@ -2,7 +2,14 @@
 
 > A Claude skill that edits any piece of writing to remove AI tells. Strips the words, phrases, and structures that mark a draft as machine-generated. Returns a clean rewrite that still sounds like the writer, only sharper.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Claude Code](https://img.shields.io/badge/Claude-Code-orange)](https://claude.com/claude-code) [![Claude Cowork](https://img.shields.io/badge/Claude-Cowork-orange)](https://claude.com) [![Skills](https://img.shields.io/badge/skill-anti--ai-purple)](skills/anti-ai-writing/SKILL.md)
+[![Version](https://img.shields.io/badge/version-2.0.0-brightgreen.svg)](CHANGELOG.md) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Claude Code](https://img.shields.io/badge/Claude-Code-orange)](https://claude.com/claude-code) [![Claude Cowork](https://img.shields.io/badge/Claude-Cowork-orange)](https://claude.com) [![Skills](https://img.shields.io/badge/skill-anti--ai-purple)](skills/anti-ai-writing/SKILL.md)
+
+> **Available in Claude's plugin marketplace.** Install it into Claude Code in two commands — add this repo as a marketplace, then install the plugin:
+>
+> ```bash
+> /plugin marketplace add avectats7/anti-ai-writing
+> /plugin install anti-ai-writing
+> ```
 
 Your reader can spot AI writing within a sentence. "Delve," "unlock the potential of," em dashes, the rule of three, "in today's fast-paced world." Once the reader notices, you lose them. This skill is the fix. Paste a draft. Get back a version that does not read like a chatbot.
 
