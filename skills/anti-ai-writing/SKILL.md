@@ -1,9 +1,9 @@
 ---
 name: anti-ai-writing
-description: Edits any piece of writing to remove AI tells. Strips banned words ("delve," "unlock," "leverage," "robust," "harness," "showcase," "navigate," "vibrant," "framework," "ecosystem," and 50+ others), banned phrases ("in today's fast-paced world," "unlock the potential of," "it is worth noting that," "in conclusion"), banned structures (em dashes, en dashes, compound-word hyphens, the default rule of three, bulleted bold-title lists, formulaic transitions like "Furthermore"), and weak verb constructions ("utilize," "facilitate," "serves as a"). Use this skill whenever the user says "make this sound human," "remove the AI tells," "edit this so it doesn't sound like ChatGPT," "humanise this," "proofread for AI," "this reads like an LLM," "make this less corporate," "rewrite without AI words," or shares any draft and wants it sharper and more human. Works in English and Spanish; the banned list is language-aware.
+description: Edits any piece of writing to remove AI tells. Strips banned words ("delve," "unlock," "leverage," "robust," "harness," "showcase," "navigate," "vibrant," "framework," "ecosystem," and 50+ others), banned phrases ("in today's fast-paced world," "unlock the potential of," "it is worth noting that," "in conclusion"), banned structures (em dashes, en dashes, compound-word hyphens, the default rule of three, bulleted bold-title lists, formulaic transitions like "Furthermore"), and weak verb constructions ("utilize," "facilitate," "serves as a"). Use this skill whenever the user says "make this sound human," "remove the AI tells," "edit this so it doesn't sound like ChatGPT," "humanise this," "proofread for AI," "this reads like an LLM," "make this less corporate," "rewrite without AI words," or shares any draft and wants it sharper and more human. Also strips discourse-level tells that survive a surface edit: stated takeaways, single-track structure, manufactured closure, emotion rendered as physical sensation, atmospheric openers, vague unnamed references, front-loaded context, and the closing epilogue paragraph. Also runs a strict review mode that audits a draft against both layers and returns a verdict and finding list instead of a rewrite, triggered by "strict review," "audit this," "score this," "does this pass," "review estricto," or any request for a judgement rather than an edit. Works in English and Spanish; the banned list is language-aware.
 metadata:
-  source: "Tats anti-AI writing ruleset (Era 1 / Era 2 / Era 3 banned word + phrase + structure list, full compound-hyphen rule, weak-verb substitution table)"
-  version: 1.0.0
+  source: "Tats anti-AI writing ruleset (Era 1 / Era 2 / Era 3 banned word + phrase + structure list, full compound-hyphen rule, weak-verb substitution table). Discourse layer adapted from Russell et al. 2026, STORYSCOPE."
+  version: 2.0.0
 ---
 
 # Anti-AI Writing
@@ -16,15 +16,50 @@ The point is not to write differently for its own sake. The point is that the mo
 
 ---
 
+## Two layers
+
+The skill edits at two levels, and both passes are required.
+
+**Layer 1, the surface.** Words, phrases, punctuation, sentence structure. Governed by `references/banned-list.md` and `references/rewrites.md`. This is what most people mean by AI tells.
+
+**Layer 2, the discourse.** What the piece explains, what it resolves, what it names, how it opens and closes, and whether it talks to the reader. Governed by `references/discourse-tells.md` and `references/discourse-rewrites.md`.
+
+Layer 2 exists because Layer 1 is not enough. Russell et al. (2026) measured 61,608 stories across one human source and five models and found that discourse features alone separate human from AI writing at 93.2% macro-F1, with zero access to word choice or punctuation. When they stripped the surface artifacts out of AI stories and ran the test again, detection went to 93.9%. Cleaning the surface did not move the structure.
+
+So a draft can pass every rule in `banned-list.md` and still read as machine-written. Layer 2 is the fix for that.
+
+Layer 2 is bounded in three ways, and the bounds are not optional. It does not apply to every register: legal, compliance, and Simplified Technical English documents need the habits it removes. It scales with length: a twelve-word message cannot carry a subplot, so most of the layer is unevaluable there. And it carries an addition budget, because an invented aside is worse than the tell it replaced.
+
+The corpus behind Layer 2 is ~5,000-word fiction. Never quote its percentages to a writer when explaining an edit on an email. Name the habit, not the statistic.
+
+---
+
 ## Read These Before You Edit
 
 For any non-trivial edit, read the reference files. They are short.
 
 - `references/banned-list.md`: the full Era 1, Era 2, Era 3 banned word list. Banned phrases. Banned structural patterns. Weak-verb substitution table. Master alphabetical list at the bottom for quick scanning.
 - `references/rewrites.md`: how to fix each kind of violation. Word-level replacements. Phrase-level rewrites. Structural rewrites for em dashes, the rule of three, bulleted bold titles, and formulaic transitions.
-- `references/examples.md`: 25+ before-and-after pairs. Tweets, emails, marketing copy, blog intros, Slack messages. Shows the skill working in different formats.
+- `references/discourse-tells.md`: Layer 2. Eight structural habits to cut, six human signals to restore, the Claude-specific fingerprint, the batch convergence rule, a ten-question scan checklist, and the registers where none of this applies.
+- `references/discourse-rewrites.md`: how to fix each structural habit, with worked pairs in email, chat, LinkedIn, client report, and landing page. Register playbooks. Sequence-level editing. What to do when a Layer 2 fix costs clarity.
+- `references/strict-review.md`: audit mode. The scorecard, the verdict table, what does not count as a violation, and the output format for reviews.
+- `references/examples.md`: 40 before-and-after pairs. Tweets, emails, marketing copy, blog intros, Slack messages, plus ten pairs that isolate the discourse layer.
 
-Default behaviour: skim all three the first time you run. After that, the references can be consulted as needed.
+Default behaviour: skim all six the first time you run. After that, the references can be consulted as needed. For any draft longer than a chat message, read the two discourse files.
+
+---
+
+## Two modes
+
+**Default mode edits.** The user has a draft and wants it fixed. Run the workflow below and return the rewrite.
+
+**Strict review mode audits.** The user wants to know what is wrong and how badly, not a cleaned-up version. Triggers: "strict review," "audit this," "score this," "does this pass," "check this against the rules," "review estricto," "how bad is this," or any request phrased as a judgement. Also use it when the user is checking writing that is not theirs, or their own writing from before the ruleset.
+
+In strict review mode, read `references/strict-review.md` and follow it instead of the workflow below. The differences that matter: no rewrite unless asked afterwards, findings scored by severity and density rather than raw count, every finding carries a quote, no praise and no cushioning, the verdict in the first line rather than the last, and a closing line naming what the draft would lose if every finding were applied.
+
+Two things that mode gets wrong if you skip the file. A Clean verdict scores the absence of tells, not the presence of anything worth reading, so inert prose scores well. And the report is an internal working document: "Fails" describes a draft against a ruleset, but forwarded to the person who wrote it, it describes them.
+
+Both modes share the same rules. What changes is whether you fix or judge.
 
 ---
 
@@ -48,6 +83,36 @@ Go through the draft systematically:
 
 Be strict. A banned word inside a long sentence still counts. A compound-word hyphen still counts.
 
+### 2b. Scan the discourse layer
+
+First check the register. Legal, compliance, procedural, or technical documentation: skip this step and say so in Notes.
+
+Then check the length band, which sets what applies and how many additions are allowed:
+
+| Band | Applies | Additions |
+|---|---|---|
+| Under 40 words | No scaffolding, one concrete specific, no stated takeaway | 0 |
+| 40 to 200 words | Habits 1, 5, 6, 7, 8 | 1 |
+| 200 to 800 words | All eight habits | 2 |
+| Over 800 words | All eight plus time jumps and thread structure | 3 |
+
+Batch convergence applies at every band, including the shortest, because it compares pieces rather than looking inside one.
+
+Then run the ten-question checklist in `references/discourse-tells.md`:
+
+1. Does the last sentence explain what the piece meant?
+2. Does everything in it serve one clean line?
+3. Does it end with the writer in control of an unresolved situation?
+4. Is any emotion expressed as a physical sensation instead of named?
+5. Does it open on mood, scene, or restated context instead of content?
+6. Is there at least one real name, number, or date?
+7. Is there at least one moment that acknowledges the reader?
+8. Is there at least one thing left open, uncertain, or conceded?
+9. Does it assume shared history rather than rebuilding it?
+10. If part of a set: does it differ structurally from its neighbours?
+
+Any yes in 1 to 5 is a habit to cut. Any no in 6 to 10 is a signal to restore, subject to the budget and the register gates: naming a feeling belongs in personal and internal writing, not client work, and a stated doubt about your own recommendation never appears in the same client-facing piece as an open item.
+
 ### 3. Build the rewrite
 
 For every flagged item, apply the rewrite from `references/rewrites.md`. The principles:
@@ -58,6 +123,14 @@ For every flagged item, apply the rewrite from `references/rewrites.md`. The pri
 - Replace em dashes with periods, colons, or sentence rewrites. Replace compound-word hyphens with the unhyphenated form or an acronym ("go-to-market" → "GTM" or "go to market").
 - Replace weak verb constructions with direct verbs ("X serves as a bridge between A and B" → "X bridges A and B").
 - Cut filler. Cut sycophantic openers. Cut summary closers.
+
+Then apply the Layer 2 fixes from `references/discourse-rewrites.md` for whatever the checklist flagged, and only that. Running all eight habits because all eight exist is how a checklist turns into a register.
+
+Three rules govern this pass.
+
+- Subtraction before addition. Six of the eight habits are fixed by deleting something.
+- The source test. Every addition must trace to something real: a line in the draft, a message in the thread, a figure in the data, a doubt the writer voiced. If you cannot point at it, cut it and say so in Notes. This replaces "never fake the mess," which is advice rather than a test.
+- The open-item contract. A loose end kept in client-facing work carries an owner, a date, and a statement of what it does and does not affect. Missing any of the three, it gets cut rather than kept.
 
 Preserve the writer's voice. Match their sentence length. Match their level of formality. Match their punctuation habits (within the rules). If they write in short sentences, do not produce long ones. If they write British English, do not produce American.
 
@@ -86,6 +159,16 @@ A bulleted list of every category of violation you found in the draft. For each,
 - 1 instance of the rule of three (where the three items were interchangeable)
 - 2 weak verb constructions: "serves as," "utilize"
 
+Then a second short block for the discourse layer, naming only what you found:
+
+- Stated takeaway in the final sentence
+- Atmospheric opener: first paragraph sets mood, content starts in paragraph two
+- No named specifics in three of four claims
+- Epilogue: closing paragraph adds nothing
+- No acknowledgement of the reader anywhere
+
+If the draft is in a register where Layer 2 does not apply, write one line saying so instead.
+
 ### Rewrite
 The fully rewritten draft, ready to use. No annotation inside the rewrite itself.
 
@@ -95,6 +178,13 @@ A short list (3 to 6 items) showing the biggest changes you made. Quote the orig
 - "Unlock the potential of your inbox" → "Get your inbox under control" (replaced banned phrase, used concrete verb)
 - "In today's fast-paced world, staying connected is more important than ever" → cut entirely (vague opener, said nothing)
 - "Our seamless solution helps you delve into deeper conversations" → "Our app makes the conversations matter" (replaced banned words, replaced metaphor with concrete claim)
+
+For Layer 2 changes, describe the move rather than quoting a substitution:
+
+- Cut the closing paragraph (epilogue; nothing was lost)
+- Moved the ask to sentence one, deleted the scene-setting opener
+- Replaced "industry benchmarks suggest" with the actual competitor bid range (verify the figures)
+- Kept the unresolved tracking issue as a separate paragraph instead of folding it into the summary
 
 ### Notes
 One short paragraph. If anything in the original was ambiguous, name it. If a stylistic choice in the rewrite is debatable, name it. If the writer should know about a pattern that keeps repeating in their drafts, mention it.
@@ -126,6 +216,22 @@ If the draft contains a quote (clearly marked with quotation marks, attributed t
 
 ### Technical writing
 Some banned words have legitimate technical uses (e.g. "framework" when referring to a named software framework, "key" when describing a cryptographic key, "navigate" when referring to literal navigation in a UI). Use judgement. The rule bans these words as filler, not as precise technical terms.
+
+### Registers where the discourse layer does not apply
+
+Layer 2 assumes the writer had a choice about structure. Several registers remove that choice, and the habits it strips are requirements there:
+
+- Simplified Technical English, procedures, safety and operating instructions
+- Legal, compliance, GDPR, privacy, and contractual text
+- Regulatory and tax correspondence
+- Technical documentation and API references
+- Client reporting under a mandated house template
+
+For these, run Layer 1 only and say so in the Notes block. Explicitness, closure, and single-track logic are the specification, not the tell.
+
+Two narrower gates apply inside registers where Layer 2 does run. Naming a feeling in plain words is a restore for personal essays, first-person posts, internal messages, and founder updates, not for client deliverables, proposals, reporting, or marketing copy, where the right emotional register is usually none. And a stated doubt about your own recommendation never shares a client-facing piece with an open item: either alone reads as candour, both together read as a lost account.
+
+In every gated case the matching cut still runs. Habit 4 comes out of a client email even though signal 4 cannot go in, and the replacement is the fact, not a feeling.
 
 ### Code and code comments
 Do not touch code. Do not touch variable names. Code is governed by different conventions.

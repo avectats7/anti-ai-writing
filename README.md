@@ -12,12 +12,17 @@ Your reader can spot AI writing within a sentence. "Delve," "unlock the potentia
 
 ## What's inside
 
-A single skill, `anti-ai-writing`, with one entry point and three reference files.
+A single skill, `anti-ai-writing`, with one entry point and six reference files. It edits on two layers and can run a strict review instead of a rewrite.
 
-- `SKILL.md` (172 lines). The workflow. Read draft, scan against banned list, rewrite, reread aloud, output with diagnosis.
-- `references/banned-list.md` (153 lines). The full Era 1 / Era 2 / Era 3 banned word list. Banned phrases. Banned structural patterns (em dashes, the default rule of three, bulleted bold titles, formulaic transitions, weak verbs). Spanish AI tells. Master alphabetical list at the bottom for quick scanning.
-- `references/rewrites.md` (200 lines). How to fix each kind of violation. Word-level substitutions. Phrase-level rewrites. Em dash patterns. Rule of three fixes. Bulleted-bold-title fixes. Formulaic transition fixes. Weak verb fixes. What to do when the rule kills the rhythm.
-- `references/examples.md` (200 lines). 30 before-and-after pairs across tweets, emails, LinkedIn posts, blog intros, marketing copy, About pages, internal communication, and Spanish examples. Calibration set for the skill.
+- `SKILL.md`. The workflow. Read draft, scan both layers, rewrite, reread aloud, output with diagnosis. Also defines strict review mode.
+- `references/banned-list.md`. The full Era 1 / Era 2 / Era 3 banned word list. Banned phrases. Banned structural patterns (em dashes, the default rule of three, bulleted bold titles, formulaic transitions, weak verbs). Spanish AI tells. Master alphabetical list at the bottom for quick scanning.
+- `references/rewrites.md`. How to fix each kind of sentence-level violation. Word-level substitutions. Phrase-level rewrites. Em dash patterns. Rule of three fixes. Bulleted-bold-title fixes. Formulaic transition fixes. Weak verb fixes. What to do when the rule kills the rhythm.
+- `references/discourse-tells.md`. The eight discourse-level tells that survive a surface edit: stated takeaways, single-track structure, manufactured closure, emotion rendered as physical sensation, atmospheric openers, vague unnamed references, front-loaded context, closing epilogue paragraph. What each is, why it reads as machine-written, how to spot it.
+- `references/discourse-rewrites.md`. How to fix each discourse tell without flattening the writer's voice.
+- `references/strict-review.md`. The scoring rubric and output format for strict review mode, which audits a draft against both layers and returns a verdict plus a finding list instead of a rewrite.
+- `references/examples.md`. Before-and-after pairs across tweets, emails, LinkedIn posts, blog intros, marketing copy, About pages, internal communication, discourse-level rewrites, and Spanish examples. Calibration set for the skill.
+
+**Two layers.** Layer 1 works at the sentence level: banned words, phrases, and structures. Layer 2 works at the discourse level: the shape of the whole piece. A draft can pass every word-level check and still read as machine-written because of its structure. Version 2 catches both.
 
 The skill works in any language. The English banned list is the most complete. The Spanish list is a starter map; additions welcome via PR.
 
@@ -186,11 +191,14 @@ anti-ai-writing/
 │   └── PULL_REQUEST_TEMPLATE.md
 ├── skills/
 │   └── anti-ai-writing/
-│       ├── SKILL.md             Entry point. The workflow.
+│       ├── SKILL.md             Entry point. Two-layer workflow + strict review.
 │       └── references/
-│           ├── banned-list.md   Full Era 1/2/3 banned words, phrases, structures.
-│           ├── rewrites.md      How to fix each violation.
-│           └── examples.md      30 before-and-after pairs.
+│           ├── banned-list.md         Full Era 1/2/3 banned words, phrases, structures.
+│           ├── rewrites.md            How to fix each sentence-level violation.
+│           ├── discourse-tells.md     The eight discourse-level tells.
+│           ├── discourse-rewrites.md  How to fix each discourse tell.
+│           ├── strict-review.md       Rubric + output for strict review mode.
+│           └── examples.md            Before-and-after pairs.
 ├── dist/
 │   └── anti-ai-writing.skill    Cowork install bundle.
 ├── docs/

@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "anti-ai-writing",
-      "description": "Edits any piece of writing to remove AI tells. Strips banned words, banned phrases, and banned structures. Returns a clean rewrite plus a diagnosis. Works in English and Spanish.",
+      "description": "Edits any piece of writing to remove AI tells. Strips banned words, banned phrases, and banned structures at the sentence level, plus discourse-level tells (stated takeaways, manufactured closure, atmospheric openers). Adds a strict review mode that returns a verdict instead of a rewrite. Works in English and Spanish.",
       "category": "productivity",
       "source": "./"
     }

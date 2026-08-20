@@ -1,4 +1,4 @@
-# Examples: 30 Before-and-After Pairs
+# Examples: 40 Before-and-After Pairs
 
 Each example is a draft that came in sounding like an LLM and a rewrite that does not. The diagnosis line explains what was wrong. Use as a calibration set when applying the skill to a new draft.
 
@@ -14,6 +14,7 @@ Organised by format. The same patterns recur across formats; the cures are simil
 - About pages and bios
 - Internal communication
 - Spanish examples
+- Discourse-layer pairs (surface is already clean)
 
 ---
 
@@ -374,3 +375,140 @@ After: "Next week: why the cheapest plan is usually the trap. See you Sunday."
 
 Before: "This presentation will delve into the key strategies and innovative approaches that can empower you to navigate the complexities of modern marketing and unlock your team's full potential."
 After: "I will show you the four ads we ran last year. Two worked. Two did not. The difference cost us $812,000 and three months to learn. The talk is the diff."
+
+---
+
+## Discourse-layer pairs (surface is already clean)
+
+These ten drafts pass the Layer 1 banned list. No banned words, no em dashes, no rule of three. They still read as machine-written, and the reason is structural. See `discourse-tells.md`.
+
+### 31. Client update with a stated takeaway
+
+Before:
+"August numbers are in. CPA dropped to $58 from $71 and lead volume held at 43. The search campaigns carried most of the gain. It goes to show that steady optimisation beats big swings."
+
+Diagnosis: stated takeaway in the final sentence. The numbers already made the point.
+
+After:
+"August numbers are in. CPA dropped to $58 from $71 and lead volume held at 43. Search carried most of the gain."
+
+Why it works: the reader draws the conclusion, which is the only kind of conclusion they trust.
+
+### 32. Slack message with an architecture
+
+Before:
+"Hi team, quick update on the landing page work. I have implemented the changes we agreed on Tuesday and pushed them to staging. Everything looks good on my end. Let me know if you spot anything."
+
+Diagnosis: chat message built like an email. Greeting, context, body, sign-off. Real chat has no architecture.
+
+After:
+"landing page changes are on staging
+pricing table breaks on mobile though, on it"
+
+Why it works: two facts, no scaffolding, one unresolved. That is what a person types.
+
+### 33. Cold email that opens on mood
+
+Before:
+"I have been following your work in the personal injury space for a while now, and I keep coming back to one thought. Most firms are still buying clicks they cannot track."
+
+Diagnosis: atmospheric opener. The content starts in sentence two.
+
+After:
+"Most personal injury firms in Louisiana still cannot tell you which clicks became cases. You are paying $71 a lead to find out."
+
+Why it works: opens on the claim and the number.
+
+### 34. Body report in a personal post
+
+Before:
+"When the client sent the termination email, my stomach dropped. I read it three times before the words arranged themselves into meaning."
+
+Diagnosis: emotion rendered as physical sensation, twice, in two sentences.
+
+After:
+"The client fired us by email on a Thursday. I was more embarrassed than anything else."
+
+Why it works: names the feeling, and names an unexpected one, which no model reaches for.
+
+### 35. Recommendation with manufactured closure
+
+Before:
+"After reviewing the data I have decided to pause the brand campaign and reallocate the budget to search, which is the clear path forward."
+
+Diagnosis: writer in full control, situation fully resolved, no case against.
+
+After:
+"I want to pause brand and move the budget to search. The case against: brand is the only thing feeding remarketing, and I do not have a replacement for that yet. I still think it is the right call."
+
+Why it works: the recommendation stays, the certainty goes. Note that the concession comes after the recommendation, never before.
+
+### 36. Report that rebuilds shared history
+
+Before:
+"As you know, we have been managing your Google Ads account since June, with a focus on personal injury keywords in the Louisiana market, and the objective of reducing cost per acquisition while maintaining lead volume. With that in mind, here are this month's results."
+
+Diagnosis: front-loaded context. Forty-two words the recipient already knows.
+
+After:
+"August results below. CPA down to $58, volume flat at 43."
+
+Why it works: assumes the reader has been reading. If a forwarded version needs context, it goes at the bottom.
+
+### 37. Vague claim with no name in it
+
+Before:
+"Industry research consistently shows that reducing form fields improves conversion, and many teams in this space have seen strong results from doing so."
+
+Diagnosis: no named source, no number, no date. Two claims, zero specifics.
+
+After:
+"We cut the intake form from nine fields to four on the Green Law site in July. Conversions went from 2.3% to 4.1%."
+
+Why it works: one verifiable claim beats two unverifiable ones.
+
+### 38. The epilogue
+
+Before:
+"...so the recommendation is to move the search budget on Monday.
+
+Happy to jump on a call to talk any of this through if it would help. Either way, thanks for a strong quarter and let me know how you would like to proceed."
+
+Diagnosis: epilogue paragraph, warm and empty. Also flat: no sentence carries more weight than any other.
+
+After:
+"...so the recommendation is to move the search budget on Monday. Yes or no by Friday and I will set it up."
+
+Why it works: the ask is the last thing the reader sees, with a date attached.
+
+### 39. LinkedIn post with everything tied off
+
+Before:
+"Three years ago I left a stable job to start a consultancy. It was terrifying. Today we work with clients across two continents and I have learned that the fear was the point. Growth lives on the other side of the decision you are avoiding."
+
+Diagnosis: stated takeaway, single clean track, resolution by the writer's own choice, no named specifics.
+
+After:
+"Three years ago I left a stable job to start a consultancy. Two of the first four clients did not pay. We work with firms in Louisiana and Lisbon now, which sounds better than it felt in month seven, and I still do not know whether it was a good decision or a lucky one."
+
+Why it works: keeps the arc, removes the moral, adds a number and a concession, and ends unresolved.
+
+### 40. A sequence that converged
+
+Before, five participant emails for one event, opening lines:
+"We are excited to welcome you to HackMeridian Lisbon."
+"We are excited to share the full schedule with you."
+"We are excited to introduce this year's judges."
+"We are excited to announce the prize pool."
+"We are excited to see you on Saturday."
+
+Diagnosis: batch convergence. Same opener, same length, same closing move, five times.
+
+After:
+"Doors open at 08:30. ONE16, Rua do Grilo 135."
+"Schedule is live. Two tracks, and the Stellar workshop clashes with lunch, which we know and cannot fix."
+"Judges: [names]. Two of them built on Soroban before it shipped."
+"Prize pool is $50k. Split across three categories, details in the doc."
+"See you Saturday."
+
+Why it works: five different shapes, five different lengths, one blunt, one long, one that admits a problem. A human comms lead writes like this because they are writing on five different days in five different moods.
