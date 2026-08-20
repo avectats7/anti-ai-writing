@@ -318,4 +318,4 @@ The defence is the same one the corpus points at: variance. Apply what the diagn
 
 ## Source
 
-Adapted from the findings of Russell, Rajendhran, Pham, Iyyer, and Wieting, "STORYSCOPE: Investigating idiosyncrasies in AI fiction" (preprint, 2026). https://github.com/jenna-russell/storyscope
+Adapted from the findings of Russell, Rajendhran, Pham, Iyyer, and Wieting, "StoryScope: Investigating idiosyncrasies in AI fiction" (preprint, 2026). https://github.com/jenna-russell/storyscope

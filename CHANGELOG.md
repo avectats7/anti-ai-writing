@@ -6,7 +6,7 @@ All notable changes to the `anti-ai-writing` skill.
 
 ### Added
 - **Discourse layer.** The skill now edits on two layers. Layer 1 (sentence level) is the original banned word / phrase / structure pass. Layer 2 (discourse level) catches tells that survive a surface edit: stated takeaways, single-track structure, manufactured closure, emotion rendered as physical sensation, atmospheric openers, vague unnamed references, front-loaded context, and the closing epilogue paragraph.
-- `references/discourse-tells.md`: catalogue of the eight discourse-level tells, each with what it is, why it reads as machine-written, and how to spot it. Adapted from Russell et al. 2026, STORYSCOPE.
+- `references/discourse-tells.md`: catalogue of the eight discourse-level tells, each with what it is, why it reads as machine-written, and how to spot it. Adapted from Russell et al. 2026, StoryScope.
 - `references/discourse-rewrites.md`: how to fix each discourse tell without flattening the writer's voice.
 - **Strict review mode.** A judgement mode that audits a draft against both layers and returns a verdict plus a finding list instead of a rewrite. Triggers on "strict review," "audit this," "score this," "does this pass," "review estricto."
 - `references/strict-review.md`: the scoring rubric and output format for strict review mode.

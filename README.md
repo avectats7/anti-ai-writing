@@ -35,6 +35,18 @@ The skill works in any language. The English banned list is the most complete. T
 
 ---
 
+## What inspired v2
+
+Version 2 came out of one paper: **StoryScope: Investigating idiosyncrasies in AI fiction** (Russell, Rajendhran, Pham, Iyyer, and Wieting, 2026).
+
+The authors asked whether you could tell human writing from AI writing *without* looking at word choice or syntax, using only discourse-level choices like character agency and chronological structure. Across 61,608 stories written to the same prompts by one human and five models, those structural features alone separated human from machine at 93.2%. Stripping the surface tells barely moved the number.
+
+That is the whole argument for Layer 2. You can scrub every banned word and still read as a machine, because the fingerprint lives in the structure. v2 exists to catch that.
+
+Paper and code: [github.com/jenna-russell/storyscope](https://github.com/jenna-russell/storyscope)
+
+---
+
 ## Install
 
 ### For Claude Code users

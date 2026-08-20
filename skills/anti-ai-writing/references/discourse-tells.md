@@ -278,6 +278,6 @@ When a draft sits in one of these registers, say so in the Notes block and apply
 
 The findings in this file come from:
 
-Jenna Russell, Rishanth Rajendhran, Chau Minh Pham, Mohit Iyyer, and John Wieting. "STORYSCOPE: Investigating idiosyncrasies in AI fiction." Preprint, University of Maryland and Google DeepMind, 2026. Code and data: https://github.com/jenna-russell/storyscope
+Jenna Russell, Rishanth Rajendhran, Chau Minh Pham, Mohit Iyyer, and John Wieting. "StoryScope: Investigating idiosyncrasies in AI fiction." Preprint, University of Maryland and Google DeepMind, 2026. Code and data: https://github.com/jenna-russell/storyscope
 
 They measured the difference. This file only translates it into edits. Any error in the translation is this skill's, not theirs.
