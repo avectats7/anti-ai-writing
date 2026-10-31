@@ -17,6 +17,31 @@ Your reader can spot AI writing within a sentence. "Delve," "unlock the potentia
 
 ---
 
+## What makes it different
+
+Most de-AI tools work from a word list. Swap "delve," cut the em dashes, done. A draft can pass every word check and still read as machine-written, because the giveaway is in how the piece is built: the opener that sets a mood, the last line that explains the moral, the tidy ending. StoryScope measured this: structure alone told human from AI at 93.2%, and scrubbing the surface tells did not lower it. This skill edits both layers.
+
+| | anti-ai-writing | [stop-slop](https://github.com/hardikpandya/stop-slop) | Grammarly-style proofreaders |
+|---|---|---|---|
+| Banned words, phrases and structures | Yes, by era, with a master list | Yes | No |
+| Discourse layer grounded in published research | Yes, 8 habits and 6 signals from StoryScope | Some structure rules, no research source | No |
+| Knows when to stay out (legal, compliance, API docs, STE) | Yes, register gates | No, bans passive voice and adverbs everywhere | No |
+| Scales the rules to length | Yes, four length bands | No | No |
+| Blocks invented details in the rewrite | Yes, every addition needs a source | No | No |
+| Audit mode with a verdict and density scoring | Yes, strict review | 1 to 10 self score | Grammar score |
+| Shows you what it changed and why | Yes, Diagnosis and Changes blocks | No | Inline suggestions |
+| Spanish | Yes, Latino and Castilian tells | No | Grammar only |
+
+Checked against stop-slop 2.0.0, March 2026.
+
+**It protects your voice.** The rewrite matches your sentence length, formality and spelling. British stays British. If you push back on a change, the skill names the rule, offers one alternative and then accepts your call.
+
+**It refuses to make things up.** A "make it sound human" prompt tends to add colour: an aside, a feeling, a detail. Here, any addition has to trace back to the draft, the thread or the data. If it cannot, it gets cut, and the Notes block says so.
+
+**It tells you the price.** Strict review ends with one line on what the draft loses if you apply every finding. Sometimes the em dash was carrying the rhythm, and keeping it is the right call.
+
+---
+
 ## What's inside
 
 A single skill, `anti-ai-writing`, with one entry point and six reference files. It edits on two layers and can run a strict review instead of a rewrite.
