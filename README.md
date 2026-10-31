@@ -2,7 +2,7 @@
 
 > A Claude skill that edits any piece of writing to remove AI tells. Strips the words, phrases, and structures that mark a draft as machine-generated. Returns a clean rewrite that still sounds like the writer, only sharper.
 
-[![Version](https://img.shields.io/badge/version-2.1.0-brightgreen.svg)](CHANGELOG.md) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Claude Code](https://img.shields.io/badge/Claude-Code-orange)](https://claude.com/claude-code) [![Claude Cowork](https://img.shields.io/badge/Claude-Cowork-orange)](https://claude.com) [![Skills](https://img.shields.io/badge/skill-anti--ai-purple)](skills/anti-ai-writing/SKILL.md)
+[![Version](https://img.shields.io/badge/version-2.2.0-brightgreen.svg)](CHANGELOG.md) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Claude Code](https://img.shields.io/badge/Claude-Code-orange)](https://claude.com/claude-code) [![Claude Cowork](https://img.shields.io/badge/Claude-Cowork-orange)](https://claude.com) [![Skills](https://img.shields.io/badge/skill-anti--ai-purple)](skills/anti-ai-writing/SKILL.md)
 
 > **Available in Claude's plugin marketplace.** Install it into Claude Code in two commands — add this repo as a marketplace, then install the plugin:
 >
@@ -53,14 +53,14 @@ Paper: [arXiv:2604.03136](https://arxiv.org/abs/2604.03136). Code and data: [git
 
 ### For Claude Code users
 
-Two commands in any Claude Code session.
+In a Claude Code session, run these two commands:
 
 ```bash
 /plugin marketplace add avectats7/anti-ai-writing
 /plugin install anti-ai-writing
 ```
 
-After install, the `anti-ai-writing` skill triggers on phrases like:
+After the install, these phrases start the `anti-ai-writing` skill:
 - "make this sound less like AI"
 - "remove the AI tells"
 - "humanise this draft"
@@ -69,7 +69,7 @@ After install, the `anti-ai-writing` skill triggers on phrases like:
 - "proofread for AI words"
 - "edit this so it sounds human"
 
-To uninstall:
+To remove the skill, run these commands:
 
 ```bash
 /plugin uninstall anti-ai-writing
@@ -78,13 +78,13 @@ To uninstall:
 
 ### For Claude Cowork users
 
-Download the packaged skill:
-
-[**Download anti-ai-writing.skill**](dist/anti-ai-writing.skill)
-
-Open the file. Cowork will offer to install. Click install. Done.
+1. Download the packaged skill: [**Download anti-ai-writing.skill**](dist/anti-ai-writing.skill)
+2. Open the file. Cowork asks if you want to install the skill.
+3. Click **Install**.
 
 ### For manual install (any environment with Claude skill support)
+
+Run these commands:
 
 ```bash
 git clone https://github.com/avectats7/anti-ai-writing.git
@@ -95,15 +95,18 @@ cp -r anti-ai-writing/skills/anti-ai-writing ~/.claude/skills/
 
 ## How it works
 
-The skill follows a five-step workflow on every edit.
+For each edit, the skill does these steps in order:
 
-1. **Read once, in full.** No editing on the first pass. Get the meaning and the writer's voice.
-2. **Scan against the banned list.** Word-level, phrase-level, structure-level. Every fingerprint noted.
-3. **Build the rewrite.** Apply the patterns from `references/rewrites.md`. Preserve the writer's voice and sentence length.
-4. **Reread aloud.** If it sounds like a committee wrote it, redo.
-5. **Output with diagnosis.** Show what was wrong, what changed, why.
+1. **Read all of the draft one time.** It does not edit on the first read. It finds the meaning and the voice of the writer.
+2. **Scan against the banned list.** It scans words, phrases and structures, and records each fingerprint.
+3. **Scan the discourse layer.** It checks the register and the length first. Then it answers a ten-question checklist about how the piece starts, ends, explains and names things. It skips this step for legal, compliance and technical documents.
+4. **Make the rewrite.** It applies the patterns from `references/rewrites.md` and `references/discourse-rewrites.md`. It keeps the voice and the sentence length of the writer.
+5. **Read the rewrite aloud.** If the rewrite sounds like a committee wrote it, the skill does the rewrite again.
+6. **Give the output with a diagnosis.** It shows what was wrong, what changed and why.
 
-Every output includes four blocks: Diagnosis (what was found), Rewrite (the fix), Changes (the biggest 3-6 edits with rationale), Notes (anything debatable or ambiguous).
+Each output has four blocks: Diagnosis (what the skill found), Rewrite (the fix), Changes (the 3 to 6 largest edits, with reasons) and Notes (anything open to debate or ambiguous).
+
+For an audit without a rewrite, ask for a "strict review." The skill then returns a verdict and a list of findings.
 
 ---
 

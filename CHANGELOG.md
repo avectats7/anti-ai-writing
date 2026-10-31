@@ -2,6 +2,13 @@
 
 All notable changes to the `anti-ai-writing` skill.
 
+## [2.2.0]: 2026-10-31
+
+### Changed
+- Rewrote the instruction text of `SKILL.md`, `references/strict-review.md`, `docs/install.md` and the README install and workflow sections in Simplified Technical English: active voice, one instruction for each sentence, no contractions, conditions first. The rules, thresholds, examples and banned lists did not change.
+- Shortened the `SKILL.md` description to fit under the 1024-character limit.
+- The README workflow now lists the discourse scan and strict review mode.
+
 ## [2.1.0]: 2026-08-20
 
 ### Added
